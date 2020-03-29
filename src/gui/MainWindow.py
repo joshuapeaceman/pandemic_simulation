@@ -1,4 +1,6 @@
 """MainGUI Class"""
+import sys
+from pathlib import Path
 
 from PyQt5 import uic
 from PyQt5.QtCore import pyqtSignal
@@ -15,8 +17,15 @@ class MainWindow(QMainWindow):
 
         self._virus_selection_list = []
 
+        if getattr(sys, 'frozen', False):
+            application_path = sys._MEIPASS
+        elif __file__:
+            application_path = Path(__file__).parent.parent.parent
+
+        dir_path = str(application_path)
+
         # load ui objects from Qt Designer .ui file
-        self._rootWidget = uic.loadUi('.\\gui\\SimulationMainWindow.ui', self)
+        self._rootWidget = uic.loadUi(dir_path+'\\src\\gui\\SimulationMainWindow.ui', self)
 
         # connect slots to the signals from UI elements
         self._rootWidget.sB_simulation_population.valueChanged.connect(

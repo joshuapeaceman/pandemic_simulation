@@ -1,4 +1,4 @@
-from src.model import Person, TheVirus
+from src.model import Person
 import random
 import plotly.graph_objects as go
 
