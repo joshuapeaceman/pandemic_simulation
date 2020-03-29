@@ -45,8 +45,10 @@ Features:
 ## Technologies
 Project is created with:
 * Python version: 3.8
+* Python random number generator (these or pseudo-random number generators)
 * PyQt version: 5
 * Plotly: 4.5.4
+
 	
 ## Known Issues
 *Very long calculation time with large populations (pop > 3000)
