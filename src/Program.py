@@ -1,6 +1,7 @@
+"""Pandemic simulation """
+
 from PyQt5 import QtWidgets
 import sys
-
 
 from src.controller import ApplicationController
 

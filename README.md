@@ -15,13 +15,13 @@ If you notice any errors, feel free to contact me or comment on this project.
 
 
 ## Version
-This is work in progress.
+This is work in progress. Feel free to make feature requests.
 
 ## General info
 This project is a simple pandemic simulator. It was inspired by the fallowing video by 3Blue1Brown youtube.com channel:
 https://www.youtube.com/watch?v=gxAaO2rsdIs
 
-This project is supposed to make a simple pandemic simulation available to everyone. The user can set up a pandemic simulation using a simple GUI,
+This project is supposed to make a simple pandemic simulation available to everyone. The user can set up a pandemic simulation using a GUI to
 customize different simulation parameters and plot the pandemic curve with Plotly. The goal was to visualize how different settings and behaviours influnce the progression of a pandemic.
 
 The fallowing simulation parameters can be customized:
@@ -32,8 +32,8 @@ The fallowing simulation parameters can be customized:
 
 *Virus name
 *Virus death rate (How deadly a virus is during the infected period.)
-*Virus contagiousness (Propability a healthy person inside a contagious area around a sick person will be infected.)
-*Virus contagious area (Area around a infected person that is contagious)
+*Virus contagiousness (Propability that a healthy person inside a contagious area around a sick person will be infected.)
+*Virus contagious area (Area around a infected person that is contagious. It this program it is a square shape and not a circle.)
 *Virus infection time (Time someone is sick and can spread the infection)
 
 
@@ -50,6 +50,7 @@ Project is created with:
 	
 ## Known Issues
 *Very long calculation time with large populations (pop > 3000)
+
 
 ```
 

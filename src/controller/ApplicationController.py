@@ -1,4 +1,3 @@
-import os
 import sys
 from pathlib import Path
 
@@ -99,7 +98,6 @@ class AppController:
 
         self.write_viurses_to_file(self._virus_list)
         self._mainWindow.update_virus_comboBox(self._virus_list)
-
 
     def set_virus_name(self, virus_name):
         self._virus_name = virus_name

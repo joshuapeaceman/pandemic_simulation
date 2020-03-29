@@ -143,7 +143,7 @@ class Simulation:
         # Change the bar mode
         fig.update_layout(barmode='stack',
                           title=self._selected_virus.get_name() + ' raged for ' + str(
-                              self._day_counter) + ' days and killed a total of ' + str(len(dead)) + ' people.',
+                              self._day_counter) + ' days, infected a total of ' + str(immune[-1]+dead[-1]) +' and killed ' + str(dead[-1]) + ' people.',
                           xaxis_title="Days of pandemic",
                           yaxis_title="People Count" )
 

@@ -11,6 +11,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -27,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -38,7 +39,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Program" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="infection_simulation_of_doom" />
+      <module name="pandemic_simulation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -56,6 +57,70 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="pandemic_simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="pandemic_simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="pandemic_simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="pandemic_simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -82,50 +147,50 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="736" y="357" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585393587772" />
-    <state width="1888" height="466" key="DebuggerActiveHint" timestamp="1585510774705">
+    <state width="1888" height="466" key="DebuggerActiveHint" timestamp="1585515962686">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1888" height="466" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1585510774705" />
+    <state width="1888" height="466" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1585515962686" />
     <state x="1061" y="456" key="FileChooserDialogImpl" timestamp="1585393376916">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1061" y="456" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1585393376916" />
-    <state width="2539" height="392" key="GridCell.Tab.0.bottom" timestamp="1585513879348">
+    <state width="2539" height="392" key="GridCell.Tab.0.bottom" timestamp="1585516235056">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585513879348" />
-    <state width="2539" height="392" key="GridCell.Tab.0.center" timestamp="1585513879348">
+    <state width="2539" height="392" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585516235056" />
+    <state width="2539" height="392" key="GridCell.Tab.0.center" timestamp="1585516235056">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585513879348" />
-    <state width="2539" height="392" key="GridCell.Tab.0.left" timestamp="1585513879347">
+    <state width="2539" height="392" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585516235056" />
+    <state width="2539" height="392" key="GridCell.Tab.0.left" timestamp="1585516235056">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585513879347" />
-    <state width="2539" height="392" key="GridCell.Tab.0.right" timestamp="1585513879348">
+    <state width="2539" height="392" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585516235056" />
+    <state width="2539" height="392" key="GridCell.Tab.0.right" timestamp="1585516235056">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585513879348" />
-    <state width="2539" height="392" key="GridCell.Tab.1.bottom" timestamp="1585513760122">
+    <state width="2539" height="392" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585516235056" />
+    <state width="2539" height="392" key="GridCell.Tab.1.bottom" timestamp="1585516234977">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585513760122" />
-    <state width="2539" height="392" key="GridCell.Tab.1.center" timestamp="1585513760122">
+    <state width="2539" height="392" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585516234977" />
+    <state width="2539" height="392" key="GridCell.Tab.1.center" timestamp="1585516234977">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585513760122" />
-    <state width="2539" height="392" key="GridCell.Tab.1.left" timestamp="1585513760122">
+    <state width="2539" height="392" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585516234977" />
+    <state width="2539" height="392" key="GridCell.Tab.1.left" timestamp="1585516234977">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585513760122" />
-    <state width="2539" height="392" key="GridCell.Tab.1.right" timestamp="1585513760122">
+    <state width="2539" height="392" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585516234977" />
+    <state width="2539" height="392" key="GridCell.Tab.1.right" timestamp="1585516234977">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="392" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585513760122" />
-    <state x="242" y="75" key="SettingsEditor" timestamp="1585513897429">
+    <state width="2539" height="392" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585516234977" />
+    <state x="242" y="75" key="SettingsEditor" timestamp="1585515863549">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="242" y="75" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585513897429" />
+    <state x="242" y="75" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585515863549" />
     <state x="976" y="526" key="com.intellij.ide.util.TipDialog" timestamp="1585346867096">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
