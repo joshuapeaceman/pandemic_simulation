@@ -1,1 +1,25 @@
-{"viruses": [{"name": "Standard Virus", "recovery_time": 10, "death_rate": 5, "contagiousness": 500, "contagious_radius": 25}, {"name": "Savannah", "recovery_time": 14, "death_rate": 1, "contagiousness": 300, "contagious_radius": 25}, {"name": "Standard Virus1", "recovery_time": 10, "death_rate": 5, "contagiousness": 500, "contagious_radius": 50}, {"name": "Standard Virus2", "recovery_time": 10, "death_rate": 5, "contagiousness": 500, "contagious_radius": 12}]}
+{
+	"viruses": [
+		{
+			"name": "Standard Virus",
+			"recovery_time": 10,
+			"death_rate": 5,
+			"contagiousness": 500,
+			"contagious_radius": 25
+		},
+		{
+			"name": "Standard Virus1",
+			"recovery_time": 10,
+			"death_rate": 5,
+			"contagiousness": 500,
+			"contagious_radius": 50
+		},
+		{
+			"name": "Standard Virus2",
+			"recovery_time": 10,
+			"death_rate": 5,
+			"contagiousness": 500,
+			"contagious_radius": 12
+		}
+	]
+}
