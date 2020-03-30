@@ -44,9 +44,9 @@ Features:
 
 
 
-[GUI example](https://raw.githubusercontent.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/GUI.png)
-[Standard Pandemic Settings](https://raw.githubusercontent.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/standard_pandemic.png)
-[Standard Pandemic Settings with contagious area set to 50](https://raw.githubusercontent.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/stand_pandemic_contagious_area_50.png)
+[GUI example](https://github.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/GUI.PNG)
+[Standard Pandemic Settings](https://github.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/standard_pandemic.PNG)
+[Standard Pandemic Settings with contagious area set to 50](https://github.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/stand_pandemic_contagious_area_50.PNG)
 
 ## Technologies/dependencies
 Project is created with:
