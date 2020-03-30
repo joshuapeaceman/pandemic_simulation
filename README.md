@@ -5,10 +5,10 @@
 * [Disclaimer](#disclaimer)
 * [Version](#version)
 * [General info](#general-info)
-* [Example Pictures](#example)
-* [Technologies](#technologies)
-* [Known Issues](#issues)
-* [Future Features](#features)
+* [Example Pictures](#example pictures)
+* [Technologies/dependencies](#technologies/dependencies)
+* [Known Issues](#known issues)
+* [Future Features](#future features)
 
 ## Disclaimer
 I am a self taught software developer with no medical/virology background or any formal computer science education. 
