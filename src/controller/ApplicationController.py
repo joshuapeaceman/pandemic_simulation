@@ -11,6 +11,8 @@ class AppController:
     def __init__(self):
 
         self._virus_list = []
+
+        # not really nice. change to something better
         self._virus_name = ''
         self._virus_death_rate = 0
         self._virus_recovery_time = 0
@@ -118,12 +120,6 @@ class AppController:
         self._simulation.set_selected_virus(next(filter(lambda x: x.get_name() == var, self._virus_list)))
         self._simulation.initiate_simulation()
 
-    def get_mainWindow(self):
-        return self._mainWindow
-
-    def get_simulation(self):
-        return self._simulation
-
     def load_virus_from_file(self):
         try:
             self._virus_list.clear()
@@ -144,7 +140,7 @@ class AppController:
             self._mainWindow.update_virus_comboBox(self._virus_list)
 
         except:
-            pass
+            print('Something went wrong loading file from directory: ' + dir_path + '\\ressources\\virus_lib.json')
 
     def write_viurses_to_file(self, viurs_list):
         data = {}
@@ -166,3 +162,9 @@ class AppController:
         dir_path = str(application_path)
         with open(dir_path + '\\ressources\\virus_lib.json', 'w') as outfile:
             json.dump(data, outfile)
+
+    def get_mainWindow(self):
+        return self._mainWindow
+
+    def get_simulation(self):
+        return self._simulation

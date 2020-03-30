@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         dir_path = str(application_path)
 
         # load ui objects from Qt Designer .ui file
-        self._rootWidget = uic.loadUi(dir_path+'\\src\\gui\\SimulationMainWindow.ui', self)
+        self._rootWidget = uic.loadUi(dir_path + '\\src\\gui\\SimulationMainWindow.ui', self)
 
         # connect slots to the signals from UI elements
         self._rootWidget.sB_simulation_population.valueChanged.connect(
@@ -90,7 +90,6 @@ class MainWindow(QMainWindow):
         self.sB_init_population_moving_distance_valueChanged()
 
     # virus properties
-
     def tE_virus_name_valueChanged(self):
         self.virusInputDataChangedEvent.emit('virus_name', self._rootWidget.tE_virus_name.toPlainText())
 
@@ -130,7 +129,8 @@ class MainWindow(QMainWindow):
 
     def update_virus_fields(self):
         try:
-            virus = next(filter(lambda x: x.get_name() == self._rootWidget.cB_virus_selection.currentText(), self._virus_selection_list))
+            virus = next(filter(lambda x: x.get_name() == self._rootWidget.cB_virus_selection.currentText(),
+                                self._virus_selection_list))
             self._rootWidget.tE_virus_name.setText(virus.get_name())
             self._rootWidget.sB_virus_death_rate.setValue(virus.get_death_rate())
             self._rootWidget.sB_virus_recovery_time.setValue(virus.get_recovery_time())
