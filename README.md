@@ -5,6 +5,7 @@
 * [Disclaimer](#disclaimer)
 * [Version](#version)
 * [General info](#general-info)
+* [Example Pictures] (#example)
 * [Technologies](#technologies)
 * [Known Issues](#issues)
 * [Future Features](#features)
@@ -42,10 +43,12 @@ Features:
 *Save virus profiles to .json file in ./ressources/ directory
 *Plot pandemic curve using Plotly
 
-
+## Example Pictures
 
 [GUI example](https://github.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/GUI.PNG)
+
 [Standard Pandemic Settings](https://github.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/standard_pandemic.PNG)
+
 [Standard Pandemic Settings with contagious area set to 50](https://github.com/joshuapeaceman/pandemic_simulation/blob/master/ressources/example_pictures/stand_pandemic_contagious_area_50.PNG)
 
 ## Technologies/dependencies
