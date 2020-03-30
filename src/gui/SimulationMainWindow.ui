@@ -89,7 +89,7 @@
            <string>Number of infected people in given population at the beginning of the simulation.</string>
           </property>
           <property name="text">
-           <string>Initial people infected (1-100)</string>
+           <string>Initialy infected people (1-100)</string>
           </property>
          </widget>
         </item>
@@ -146,6 +146,9 @@
           </property>
           <property name="maximum">
            <number>10000</number>
+          </property>
+          <property name="value">
+           <number>1000</number>
           </property>
          </widget>
         </item>
@@ -328,7 +331,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Simulation population size. Dont go over 1000! It will break your computer....</string>
+           <string>Simulation population size. Dont go over 5000! It will break your computer....</string>
           </property>
           <property name="text">
            <string>Simulation Population (100-10000)</string>
@@ -352,7 +355,7 @@
            <string>This parameter is multiplied with a random angle alpha to set a new position (x, y) every day. Every person will move this distance in a random direction.</string>
           </property>
           <property name="text">
-           <string>Population moving distance (0-250)</string>
+           <string>Population mobility (0-250)</string>
           </property>
          </widget>
         </item>

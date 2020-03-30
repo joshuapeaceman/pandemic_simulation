@@ -7,12 +7,12 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Known Issues](#issues)
+* [Future Features](#features)
 
 ## Disclaimer
 I am a self taught software developer with no medical/virology background or any formal computer science education. 
 The included virus characteristics are completly made up. 
 If you notice any errors, feel free to contact me or comment on this project.
-
 
 ## Version
 This is work in progress. Feel free to make feature requests.
@@ -42,16 +42,20 @@ Features:
 *Save virus profiles to .json file in ./ressources/ directory
 *Plot pandemic curve using Plotly
 
-## Technologies
+## Technologies/dependencies
 Project is created with:
 * Python version: 3.8
 * Python random number generator (these or pseudo-random number generators)
-* PyQt version: 5
+* PyQt5 
 * Plotly: 4.5.4
 
-	
 ## Known Issues
-*Very long calculation time with large populations (pop > 3000)
+*Very long calculation time running on large populations (pop > 3000)
+
+## Future Features
+*include quarantin settings in model
+*include symptoms in model
+*provide binaries
 
 
 ```
