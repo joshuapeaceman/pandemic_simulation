@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -60,70 +60,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="pandemic_simulation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="pandemic_simulation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="pandemic_simulation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="pandemic_simulation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Program" />
@@ -148,30 +84,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="736" y="357" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585518406865" />
+    <state x="509" y="263" width="733" height="336" key="#com.intellij.tools.ToolEditorDialog" timestamp="1585555617881">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="509" y="263" width="733" height="336" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585555617881" />
     <state width="1888" height="466" key="DebuggerActiveHint" timestamp="1585515962686">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1888" height="466" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1585515962686" />
-    <state x="1061" y="456" key="FileChooserDialogImpl" timestamp="1585393376916">
+    <state x="1061" y="456" key="FileChooserDialogImpl" timestamp="1585555213781">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1061" y="456" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1585393376916" />
-    <state width="2539" height="275" key="GridCell.Tab.0.bottom" timestamp="1585521530421">
+    <state x="1061" y="456" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1585555213781" />
+    <state width="2539" height="400" key="GridCell.Tab.0.bottom" timestamp="1585556458332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="275" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585521530421" />
-    <state width="2539" height="275" key="GridCell.Tab.0.center" timestamp="1585521530421">
+    <state width="2539" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585556458332" />
+    <state width="2539" height="400" key="GridCell.Tab.0.center" timestamp="1585556458332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="275" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585521530421" />
-    <state width="2539" height="275" key="GridCell.Tab.0.left" timestamp="1585521530421">
+    <state width="2539" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585556458332" />
+    <state width="2539" height="400" key="GridCell.Tab.0.left" timestamp="1585556458332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="275" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585521530421" />
-    <state width="2539" height="275" key="GridCell.Tab.0.right" timestamp="1585521530421">
+    <state width="2539" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585556458332" />
+    <state width="2539" height="400" key="GridCell.Tab.0.right" timestamp="1585556458332">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="275" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585521530421" />
+    <state width="2539" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585556458332" />
     <state width="2539" height="275" key="GridCell.Tab.1.bottom" timestamp="1585521530421">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -188,10 +128,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2539" height="275" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585521530421" />
-    <state x="242" y="75" key="SettingsEditor" timestamp="1585521468591">
+    <state x="242" y="75" key="SettingsEditor" timestamp="1585555620827">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="242" y="75" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585521468591" />
+    <state x="242" y="75" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585555620827" />
     <state x="976" y="526" key="com.intellij.ide.util.TipDialog" timestamp="1585346867096">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
