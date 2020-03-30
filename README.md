@@ -5,7 +5,7 @@
 * [Disclaimer](#disclaimer)
 * [Version](#version)
 * [General info](#general-info)
-* [Example Pictures] (#example)
+* [Example Pictures](#example)
 * [Technologies](#technologies)
 * [Known Issues](#issues)
 * [Future Features](#features)
