@@ -6,9 +6,9 @@
 * [Version](#version)
 * [General info](#general-info)
 * [Example Pictures](#example pictures)
-* [Technologies/dependencies](#technologies/dependencies)
-* [Known Issues](#known issues)
-* [Future Features](#future features)
+* [Technology](#technology)
+* [Issues](#issues)
+* [Future](#future)
 
 ## Disclaimer
 I am a self taught software developer with no medical/virology background or any formal computer science education. 
