@@ -1,6 +1,3 @@
-
-
-
 class Virus:
     name: str
     recovery_time: int
@@ -14,7 +11,6 @@ class Virus:
         self._death_rate = death_rate
         self._contagiousness = contagiousness
         self._contagious_radius = contagious_radius
-
 
     def set_name(self, name):
         self._name = name
@@ -45,4 +41,3 @@ class Virus:
 
     def get_contagious_radius(self):
         return self._contagious_radius
-
