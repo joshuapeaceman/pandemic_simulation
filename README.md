@@ -42,6 +42,12 @@ Features:
 *Save virus profiles to .json file in ./ressources/ directory
 *Plot pandemic curve using Plotly
 
+
+
+[alt text](https://raw.githubusercontent.com/joshuapeaceman/pandemic_simulation/master/ressources/example_pictures/GUI.png)
+[alt text](https://raw.githubusercontent.com/joshuapeaceman/pandemic_simulation/master/ressources/example_pictures/standard_pandemic.png)
+[alt text](https://raw.githubusercontent.com/joshuapeaceman/pandemic_simulation/master/ressources/example_pictures/stand_pandemic_contagious_area_50.png)
+
 ## Technologies/dependencies
 Project is created with:
 * Python version: 3.8
