@@ -136,9 +136,9 @@ class Simulation:
 
         fig = go.Figure(data=[
             go.Bar(name='Sick', x=days, y=sick),
-            go.Bar(name='Immune', x=days, y=immune),
+            go.Bar(name='Immune/Cured', x=days, y=immune),
             go.Bar(name='Dead', x=days, y=dead),
-            go.Bar(name='Quarantine', x=days, y=quarantined),
+            go.Bar(name='Quarantine(not implemented yet)', x=days, y=quarantined),
             go.Bar(name='Healthy', x=days, y=healthy)])
         # Change the bar mode
         fig.update_layout(barmode='stack',
