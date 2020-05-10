@@ -27,15 +27,6 @@ class MainWindow(QMainWindow):
         # load ui objects from Qt Designer .ui file
         self._rootWidget = uic.loadUi(dir_path + '\\src\\gui\\SimulationMainWindow.ui', self)
 
-        # connect slots to the signals from UI elements
-        self._rootWidget.sB_simulation_population.valueChanged.connect(
-            lambda: self.sB_population_size_valueChanged())
-
-        self._rootWidget.sB_init_infected_population.valueChanged.connect(
-            lambda: self.sB_initial_infected_population_valueChanged())
-
-        self._rootWidget.sB_init_population_moving_distance.valueChanged.connect(
-            lambda: self.sB_init_population_moving_distance_valueChanged())
 
         self._rootWidget.pB_init_sim.clicked.connect(lambda: self.pB_init_sim_clicked())
 
@@ -58,6 +49,10 @@ class MainWindow(QMainWindow):
             lambda: self.sB_virus_contagiousness_radius_valueChanged())
 
         self._rootWidget.cB_virus_selection.currentIndexChanged.connect(lambda: self.update_virus_fields())
+
+
+
+
 
     def pB_select_virus_clicked(self):
         # get value from comboBox first
@@ -85,9 +80,7 @@ class MainWindow(QMainWindow):
     def pB_init_sim_clicked(self):
         self.buttonClickedEventWithArgument.emit('init_sim', self._rootWidget.cB_virus_selection.currentText())
         # population and people settings
-        self.sB_population_size_valueChanged()
-        self.sB_initial_infected_population_valueChanged()
-        self.sB_init_population_moving_distance_valueChanged()
+
 
     # virus properties
     def tE_virus_name_valueChanged(self):
@@ -108,18 +101,10 @@ class MainWindow(QMainWindow):
         self.virusInputDataChangedEvent.emit('virus_contagiousness_radius',
                                              str(self._rootWidget.sB_virus_contagiousness_radius.value()))
 
-    # simulation properties
-    def sB_init_population_moving_distance_valueChanged(self):
-        self.simulationInputDataChangedEvent.emit('population_moving_distance_per_day',
-                                                  self._rootWidget.sB_init_population_moving_distance.value())
 
-    def sB_population_size_valueChanged(self):
-        self.simulationInputDataChangedEvent.emit('population_size',
-                                                  self._rootWidget.sB_simulation_population.value())
 
-    def sB_initial_infected_population_valueChanged(self):
-        self.simulationInputDataChangedEvent.emit('infected_population_at_start',
-                                                  self._rootWidget.sB_init_infected_population.value())
+
+
 
     def update_virus_comboBox(self, virus_list):
         self._virus_selection_list = virus_list
@@ -138,3 +123,7 @@ class MainWindow(QMainWindow):
             self._rootWidget.sB_virus_contagiousness_radius.setValue(virus.get_contagious_radius())
         except:
             pass
+
+
+    def get_rootWidget(self):
+        return self._rootWidget

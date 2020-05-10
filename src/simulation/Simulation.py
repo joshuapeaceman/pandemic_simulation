@@ -1,32 +1,48 @@
+import math
+from copy import deepcopy
+
+import pandas
+from PyQt5.QtCore import QThread
+
 from src.model import Person
 import random
 import plotly.graph_objects as go
+import plotly.express as px
 
 
-class Simulation:
+
+class Simulation(QThread):
     def __init__(self):
+        QThread.__init__(self)
 
         self._person_dictionary = {}
         self._person_list = []
 
         self._population_size = 1000
         self._initial_infected_population = 1
-        self._people_moving_distance_per_day = 10
+        self._people_moving_distance_per_day = 25
+        self._people_moving_distance_per_day_after_reduction = 10
+        self._mobility_reduction_start_time = 1000
+        self._send_to_hospital_day = 0
 
+        self.last_know_new_infection = 0
+        self._hospital_capacity = 150
+        self._hospital_beds_used_cnt = 0
         self._selected_virus = None
+        self.stats = []
 
-        self._day_counter = 0
-
-        # end simulation while loop flag
-        self._simulation_end_flag = False
-
+        self.animation_df = []
         self._simulation_stats_per_day = []
 
-    def start_simulation(self):
-        self.run_simulation_loop()
+    def __del__(self):
+        self.wait()
+
+    def run(self):
+        self.initiate_simulation()
 
     def initiate_simulation(self):
         self._simulation_end_flag = False
+        self.animation_df.clear()
 
         self._person_dictionary = {0: [],
                                    1: [],
@@ -36,17 +52,17 @@ class Simulation:
 
         # adding sick people to the population
         for i in range(0, self._initial_infected_population):
-            person = Person.Person(moving_distance=self._people_moving_distance_per_day)
+            person = Person.Person(i, moving_distance=self._people_moving_distance_per_day)
             person.set_health_status_to_infected_at_current_day(0)
-            person.set_infected_by_virus(self._selected_virus)
             self._person_dictionary[1].append(person)
 
         # adding healthy people to the population
         for x in range(self._initial_infected_population, self._population_size):
-            self._person_dictionary[0].append(Person.Person(moving_distance=self._people_moving_distance_per_day))
+            self._person_dictionary[0].append(Person.Person(x, moving_distance=self._people_moving_distance_per_day))
 
         print('Initiation done..', self._initial_infected_population, 'people started out sick and ',
               self._population_size - self._initial_infected_population, 'started healthy')
+
         self.run_simulation_loop()
 
     def run_simulation_loop(self):
@@ -57,72 +73,82 @@ class Simulation:
         'Recovered' if they survived for the set duration of the illness (see self.update_health_Status()). At last
         all infected people check their surroundings for health people and infect them depending on the
         contagiousness propability set by the user (see self.find_healthy_persons_inside_contagious_radius_and_infect())"""
+        self._simulation_end_flag = False
+        self.stats.clear()
 
-        stats = []
-        self._day_counter = 0
-        last_know_new_infection = 0
+        day_counter = 0
+        self.last_know_new_infection = 0
         print('starting simulation run..')
 
         while not self._simulation_end_flag:
 
-            self._person_dictionary[0].sort(key=lambda x: x.get_position()[0])
-            self._person_dictionary[0].sort(key=lambda x: x.get_position()[1])
-
             # all healthy people
             for idx, aPerson in enumerate(self._person_dictionary[0]):
-                aPerson.update_position()
+                aPerson.update_position(self._people_moving_distance_per_day)
 
             # all infected people
             for idx, aPerson in enumerate(self._person_dictionary[1]):
 
+                aPerson.update_position(self._people_moving_distance_per_day)
                 # update health status for infected people (either recovered or killed)
-                self.update_health_status(aPerson, self._day_counter, self._person_dictionary, idx)
-                aPerson.update_position()
-                infected = self.find_healthy_persons_inside_contagious_radius_and_infect(aPerson,
-                                                                                         self._day_counter,
-                                                                                         self._person_dictionary[
-                                                                                             0])
-                if infected[0] == True:
-                    last_know_new_infection = self._day_counter
+                status = self.update_health_status(aPerson, day_counter, self._person_dictionary,
+                                             idx)
 
-            stats.append((self._day_counter,
-                          len(self._person_dictionary[0]),
-                          len(self._person_dictionary[1]),
-                          len(self._person_dictionary[2]),
-                          len(self._person_dictionary[3]),
-                          len(self._person_dictionary[4])))
-            print('day: ', self._day_counter)
+                if status != 'dead' or status != 'recovered':
+                    infected = self.find_healthy_persons_inside_contagious_radius_and_infect(aPerson,
+                                                                                             day_counter,
+                                                                                             self._person_dictionary[
+                                                                                                 0])
 
-            # when there are no more infected people who could spread the virus stop simulation
-            if self._day_counter > last_know_new_infection + self._selected_virus.get_recovery_time() and len(
-                    self._person_dictionary[1]) == 0:
+                    if infected == True:
+                        self.last_know_new_infection = day_counter
+
+            self.stats.append((day_counter,
+                               len(self._person_dictionary[0]),
+                               len(self._person_dictionary[1]),
+                               len(self._person_dictionary[2]),
+                               len(self._person_dictionary[3]),
+                               len(self._person_dictionary[4]),
+                               ))
+
+            healthy_ppl = len(self._person_dictionary[0])
+            percentage = ((self._population_size - healthy_ppl) / self._population_size) * 100
+
+            if percentage >= (self._mobility_reduction_start_time / 10):
+                self._people_moving_distance_per_day = self._people_moving_distance_per_day_after_reduction
+
+            if day_counter >= 300 and day_counter > self.last_know_new_infection + self._selected_virus.get_recovery_time():
                 self._simulation_end_flag = True
-                print('finished simulation run.. plotting... check your browser')
-                self.plot_simulation_stats(stats)
+                print('finished simulation run.. plotting stats... check your browser')
+                self.plot_simulation_stats(self.stats)
+                ('finished simulation run.. generating animation... check your browser')
+                self.generate_animation(self.animation_df)
 
-            self._day_counter += 1
+            self.generate_scatter_plot_animation_frames(day_counter, self._person_dictionary)
+            day_counter += 1
 
     def find_healthy_persons_inside_contagious_radius_and_infect(self, current_person, current_day, person_list):
         """This method checks for healthy people inside the contagiouse square of current_person and tries to infect
         them with the virus contagiousness propability """
 
         infected_flag = False
-        infected_cnt = 0
-
         # stops person from infecting people on the same day they were infected
         if current_person.get_infection_start_time() < current_day:
             for idx, aPerson in enumerate(person_list):
 
                 # check, if person is inside the contagious radius
                 infectious_radius = self._selected_virus.get_contagious_radius()
-                if (aPerson.get_position()[0] >= (current_person.get_position()[0] -
-                                                  infectious_radius)) and (
-                        aPerson.get_position()[0] <= (current_person.get_position()[0] +
-                                                      infectious_radius)) and (
-                        aPerson.get_position()[1] >= (current_person.get_position()[1] -
-                                                      infectious_radius)) and (
-                        aPerson.get_position()[1] <= (current_person.get_position()[1] +
-                                                      infectious_radius)):
+
+                dX = aPerson.get_position()[0] - current_person.get_position()[0]
+                dY = aPerson.get_position()[1] - current_person.get_position()[1]
+                if dX < 0:
+                    dX = dX * -1
+                if dY < 0:
+                    dY = dY * -1
+
+                distance = math.sqrt((dX * dX) + (dY * dY))
+
+                if distance <= infectious_radius:
 
                     # if a person is still healthy, they can be infected
                     if random.randrange(0, 1000, 1) <= self._selected_virus.get_contagiousness():
@@ -130,25 +156,76 @@ class Simulation:
                         aPerson.set_health_status_to_infected_at_current_day(current_day=current_day)
                         # remove newly infected person from healthy list and add to the infected list
                         self._person_dictionary[1].append(person_list.pop(idx))
-                        infected_cnt += 1
+
                         infected_flag = True
-        return (infected_flag, infected_cnt)
+        return infected_flag
 
     def update_health_status(self, current_person, current_day, person_dictionary, current_index):
-        if current_person.get_infection_start_time() < current_day:
-            if random.randrange(0, 1000, 1) <= self._selected_virus.get_death_rate():
-                current_person.set_health_status(3)
-                person_dictionary[3].append(person_dictionary[1].pop(current_index))
+        x = int(current_day - current_person.get_infection_start_time())
+        if int(current_day - current_person.get_infection_start_time()) == self._send_to_hospital_day:
+            if self._hospital_beds_used_cnt <= self._hospital_capacity:
+                if current_person.get_hospitalized_status() != True:
+                    current_person.send_to_hospital()
+                    self._hospital_beds_used_cnt += 1
 
-            # set quarantine
-            elif current_person.get_infection_start_time() == current_day - 1:
-                # self._health_status = 4
-                # person_dictionary[4].append(person_dictionary[1].pop(current_index))
-                pass
+        if current_day - current_person.get_infection_start_time() >= self._selected_virus.get_recovery_time():
+            if random.randrange(0, 1000, 1) <= (self._selected_virus.get_death_rate()):
+                self._hospital_beds_used_cnt -= 1
+                current_person.set_health_status(3)
+                current_person.send_to_cemetery()
+                person_dictionary[3].append(person_dictionary[1].pop(current_index))
+                return 'dead'
             else:
-                if current_day - current_person.get_infection_start_time() >= self._selected_virus.get_recovery_time():
-                    current_person.set_health_status(2)
-                    person_dictionary[2].append(person_dictionary[1].pop(current_index))
+                self._hospital_beds_used_cnt -= 1
+                current_person.set_health_status(2)
+                current_person.send_to_afterparty()
+                person_dictionary[2].append(person_dictionary[1].pop(current_index))
+                return 'recovered'
+
+    def generate_scatter_plot_animation_frames(self, day, population):
+
+        for person in population[0]:
+            day_plot = {'id': int(person.get_id()),
+                        'day': day,
+                        'x': int(person.get_position()[0]),
+                        'y': int(person.get_position()[1]),
+                        'col': "healthy"}
+            self.animation_df.append(day_plot)
+
+        for person1 in population[1]:
+            day_plot1 = {'id': int(person1.get_id()),
+                         'day': day,
+                         'x': int(person1.get_position()[0]),
+                         'y': int(person1.get_position()[1]),
+                         'col': "sick"}
+            self.animation_df.append(day_plot1)
+
+        for person2 in population[2]:
+            day_plot2 = {'id': int(person2.get_id()),
+                         'day': day,
+                         'x': int(person2.get_position()[0]),
+                         'y': int(person2.get_position()[1]),
+                         'col': "recovered"}
+            self.animation_df.append(day_plot2)
+
+        for person3 in population[3]:
+            day_plot3 = {'id': int(person3.get_id()),
+                         'day': day,
+                         'x': int(person3.get_position()[0]),
+                         'y': int(person3.get_position()[1]),
+                         'col': "dead"}
+            self.animation_df.append(day_plot3)
+
+        self.animation_df.append({'id': 10000,
+                                  'day': day,
+                                  'x': 0,
+                                  'y': 0,
+                                  'col': "recovered"})
+        self.animation_df.append({'id': 9999,
+                                  'day': day,
+                                  'x': 1000,
+                                  'y': 1000,
+                                  'col': "dead"})
 
     def plot_simulation_stats(self, stats):
         """This method plots the simulation stats to a plotly stacked bar chart"""
@@ -158,6 +235,9 @@ class Simulation:
         immune = []
         dead = []
         quarantined = []
+
+
+
         x = 0
         for stat in stats:
             days.append(stat[0])
@@ -169,23 +249,25 @@ class Simulation:
             x += 1
 
         fig = go.Figure(data=[
-            go.Bar(name='Sick', x=days, y=sick),
-            go.Bar(name='Recovered', x=days, y=immune),
-            go.Bar(name='Dead', x=days, y=dead),
-            go.Bar(name='Quarantine(not implemented yet)', x=days, y=quarantined),
-            go.Bar(name='Healthy', x=days, y=healthy)])
+            go.Bar(name='Sick', x=days, y=sick, marker={'color': 'blue'} ),
+            go.Bar(name='Recovered', x=days, y=immune, marker={'color': 'green'}),
+            go.Bar(name='Dead', x=days, y=dead, marker={'color': 'red'}),
+            go.Bar(name='Healthy', x=days, y=healthy, marker={'color': 'orange'})])
         # Change the bar mode
         fig.update_layout(barmode='stack',
                           title=self._selected_virus.get_name() + ' raged for ' + str(
-                              self._day_counter) + ' days, infected a total of ' + str(
+                              self.last_know_new_infection + self._selected_virus.get_recovery_time()) + ' days, infected a total of ' + str(
                               immune[-1] + dead[-1]) + ' and killed ' + str(dead[-1]) + ' people.',
                           xaxis_title="Days of pandemic",
                           yaxis_title="People Count")
 
         fig.show()
 
-    def get_person_list(self):
-        return self._person_list
+    def generate_animation(self, animation_df):
+        df = pandas.DataFrame(animation_df)
+        fig2 = px.scatter(data_frame=df, x="x", y="y", animation_frame="day", animation_group="id", color="col",
+                          range_x=[-500, 1500], range_y=[-500, 1500])
+        fig2.show()
 
     def set_selected_virus(self, virus):
         self._selected_virus = virus
@@ -193,8 +275,20 @@ class Simulation:
     def set_initial_infected_population(self, infected_population):
         self._initial_infected_population = infected_population
 
+    def set_send_to_hospital_day(self, day):
+        self._send_to_hospital_day = day
+
     def set_population_size(self, size):
         self._population_size = size
 
     def set_people_moving_distance_per_day(self, moving_distance):
         self._people_moving_distance_per_day = moving_distance
+
+    def set_people_moving_distance_per_day_after_reduction(self, reduced_movement):
+        self._people_moving_distance_per_day_after_reduction = reduced_movement
+
+    def set_mobility_reduction_start_time(self, event_time):
+        self._mobility_reduction_start_time = event_time
+
+    def set_hospital_capacity(self, no):
+        self._hospital_capacity = no
