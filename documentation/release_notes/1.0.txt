@@ -1,0 +1,68 @@
+GIT v1.0 Release Notes
+==========================
+
+Fixes since previous release
+------------------
+
+** Documentation updates
+
+  - Adds release note
+
+** New features
+
+  * New simulation parameters
+	
+	- Adds hospital/quarantine spots.
+	
+	 (These spots can be filled with sick/infected people. It removes them from the general population 
+	 so they can't continue infecting healthy people.)
+	
+	- Adds counter_parameter when to send an infected person to the hospital/quarantine zone.
+	
+	  ((current_day - person.infection_start_day) == counter_parameter : send_person_to_quarantine_area()
+	  
+	- Adds population movement reduction parameters.
+	
+     (Reduce the movement of a person to a specific value after the infected population reaches a 
+	 given percentage of the entire population.)
+	 
+	 
+  * Animation features
+  
+	- Adds Plotly scatter plot animation to the program
+	
+
+  * PyQt multi-threading
+  
+	- Adds PyQt multi-threading to the program. 
+	
+	 (Starting a simulation won't block the program/GUI. We can now run multiple Simulations in parallel.)
+
+
+
+** Bugfixes
+
+  - Fixed killing off infected people mechanism. The simulation will now only try to kill a person once 
+	and not on every day during the infected period. 
+
+
+
+** Tweaks
+
+  - Changed the geometry of the infectiou area around an infected person from a square to a circle
+  
+  - Removed recursion from the update_position() method inside the Person class. If the new position is outside 
+    the main population area the method will invert the direktion of movement instead of recursively update the 
+	positon again and again.
+	
+  - Set general simulation paramets inside the run_simulation() method of the ApplicatioController class. 
+  
+  
+  
+** Known bugs/issues
+
+  - In some cases the position of a person will move outside the main population area. This is due to the 
+    removed recursion in the update_position() method.
+	
+  - To change virus parameters the user has to click the Update Virus button and reselect the 
+    virus from the drop down menu.
