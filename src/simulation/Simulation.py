@@ -168,7 +168,7 @@ class Simulation(QThread):
     def update_health_status(self, current_person, current_day, person_dictionary, current_index):
         x = int(current_day - current_person.get_infection_start_time())
         if int(current_day - current_person.get_infection_start_time()) == self._send_to_hospital_day:
-            if self._hospital_beds_used_cnt <= self._hospital_capacity:
+            if self._hospital_beds_used_cnt < self._hospital_capacity:
                 if current_person.get_hospitalized_status() != True:
                     current_person.send_to_hospital()
                     self._hospital_beds_used_cnt += 1
