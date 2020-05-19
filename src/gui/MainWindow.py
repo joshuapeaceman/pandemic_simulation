@@ -27,10 +27,7 @@ class MainWindow(QMainWindow):
         # load ui objects from Qt Designer .ui file
         self._rootWidget = uic.loadUi(dir_path + '\\src\\gui\\SimulationMainWindow.ui', self)
 
-
         self._rootWidget.pB_init_sim.clicked.connect(lambda: self.pB_init_sim_clicked())
-
-        self._rootWidget.pB_select_virus.clicked.connect(lambda: self.pB_select_virus_clicked())
 
         self._rootWidget.pB_new_virus.clicked.connect(lambda: self.pB_new_virus_clicked())
 
@@ -49,10 +46,6 @@ class MainWindow(QMainWindow):
             lambda: self.sB_virus_contagiousness_radius_valueChanged())
 
         self._rootWidget.cB_virus_selection.currentIndexChanged.connect(lambda: self.update_virus_fields())
-
-
-
-
 
     def pB_select_virus_clicked(self):
         # get value from comboBox first
@@ -81,7 +74,6 @@ class MainWindow(QMainWindow):
         self.buttonClickedEventWithArgument.emit('init_sim', self._rootWidget.cB_virus_selection.currentText())
         # population and people settings
 
-
     # virus properties
     def tE_virus_name_valueChanged(self):
         self.virusInputDataChangedEvent.emit('virus_name', self._rootWidget.tE_virus_name.toPlainText())
@@ -101,11 +93,6 @@ class MainWindow(QMainWindow):
         self.virusInputDataChangedEvent.emit('virus_contagiousness_radius',
                                              str(self._rootWidget.sB_virus_contagiousness_radius.value()))
 
-
-
-
-
-
     def update_virus_comboBox(self, virus_list):
         self._virus_selection_list = virus_list
         self._rootWidget.cB_virus_selection.clear()
@@ -123,7 +110,6 @@ class MainWindow(QMainWindow):
             self._rootWidget.sB_virus_contagiousness_radius.setValue(virus.get_contagious_radius())
         except:
             pass
-
 
     def get_rootWidget(self):
         return self._rootWidget
