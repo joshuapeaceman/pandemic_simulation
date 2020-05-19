@@ -21,6 +21,8 @@ class Simulation(QThread):
         self._population_size = 1000
         self._initial_infected_population = 1
         self._people_moving_distance_per_day = 25
+        self._people_moving_distance_per_day_original = 25
+
         self._people_moving_distance_per_day_after_reduction = 10
         self._mobility_reduction_start_time = 1000
         self._send_to_hospital_day = 0
@@ -111,12 +113,15 @@ class Simulation(QThread):
                                len(self._person_dictionary[4]),
                                ))
 
-            healthy_ppl = len(self._person_dictionary[0])
-            percentage = ((self._population_size - healthy_ppl) / self._population_size) * 100
+            active_sick_people = len(self._person_dictionary[1])
+            percentage = (active_sick_people / self._population_size) * 100
 
             if percentage >= (self._mobility_reduction_start_time / 10):
                 self._people_moving_distance_per_day = self._people_moving_distance_per_day_after_reduction
+            else:
+                self._people_moving_distance_per_day = self._people_moving_distance_per_day_original
 
+                
             if day_counter >= 300 and day_counter > self.last_know_new_infection + self._selected_virus.get_recovery_time():
                 self._simulation_end_flag = True
                 print('finished simulation run.. plotting stats... check your browser')
@@ -283,6 +288,7 @@ class Simulation(QThread):
 
     def set_people_moving_distance_per_day(self, moving_distance):
         self._people_moving_distance_per_day = moving_distance
+        self._people_moving_distance_per_day_original = moving_distance
 
     def set_people_moving_distance_per_day_after_reduction(self, reduced_movement):
         self._people_moving_distance_per_day_after_reduction = reduced_movement
