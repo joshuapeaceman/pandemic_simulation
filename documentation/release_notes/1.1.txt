@@ -1,0 +1,28 @@
+GIT v1.1 Release Notes
+==========================
+
+Fixes since previous release
+
+** Fixed hospital capacity bug where infected were admitted to the hospital area even though no the initial capaity was zero
+
+------------------
+
+** Documentation updates
+
+
+
+** New features
+
+  
+
+** Tweaks
+
+  
+  
+** Known bugs/issues
+
+  - In some cases the position of a person will move outside the main population area. This is due to the 
+    removed recursion in the update_position() method.
+	
+  - To change virus parameters the user has to click the Update Virus button and reselect the 
+    virus from the drop down menu.
