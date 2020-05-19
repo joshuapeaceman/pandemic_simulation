@@ -13,7 +13,7 @@ The included virus characteristics are completly made up.
 If you notice any errors, feel free to contact me or comment on this project.
 
 ## Version
-version 1.0
+version 1.1
 This is work in progress. Feel free to make feature requests.
 
 ## General info
