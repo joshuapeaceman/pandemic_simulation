@@ -121,7 +121,7 @@ class Simulation(QThread):
             else:
                 self._people_moving_distance_per_day = self._people_moving_distance_per_day_original
 
-                
+
             if day_counter >= 300 and day_counter > self.last_know_new_infection + self._selected_virus.get_recovery_time():
                 self._simulation_end_flag = True
                 print('finished simulation run.. plotting stats... check your browser')
