@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74c835ce-0106-4510-adef-41ce3237909f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ressources/virus_lib.json" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/virus_lib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SimulationMainWindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SimulationMainWindow.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/example_pictures/GUI.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/example_pictures/GUI.PNG" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
