@@ -25,7 +25,6 @@ class Person:
                 new_y_pos = self._position[1] - int(math.sin(radians) * moving_distance)
                 self._position = (new_x_pos, new_y_pos)
 
-
     def send_to_hospital(self):
         self._hospitalized = True
         new_x_pos = -100 + random.randrange(0, 200, 1)
@@ -51,9 +50,9 @@ class Person:
     def set_health_status(self, health_status):
         self._health_status = health_status
 
-
     def get_hospitalized_status(self):
         return self._hospitalized
+
     def get_id(self):
         return self._id
 

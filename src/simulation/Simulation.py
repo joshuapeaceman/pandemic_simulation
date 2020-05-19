@@ -10,7 +10,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-
 class Simulation(QThread):
     def __init__(self):
         QThread.__init__(self)
@@ -94,7 +93,7 @@ class Simulation(QThread):
                 aPerson.update_position(self._people_moving_distance_per_day)
                 # update health status for infected people (either recovered or killed)
                 status = self.update_health_status(aPerson, day_counter, self._person_dictionary,
-                                             idx)
+                                                   idx)
 
                 if status != 'dead' or status != 'recovered':
                     infected = self.find_healthy_persons_inside_contagious_radius_and_infect(aPerson,
@@ -120,7 +119,6 @@ class Simulation(QThread):
                 self._people_moving_distance_per_day = self._people_moving_distance_per_day_after_reduction
             else:
                 self._people_moving_distance_per_day = self._people_moving_distance_per_day_original
-
 
             if day_counter >= 300 and day_counter > self.last_know_new_infection + self._selected_virus.get_recovery_time():
                 self._simulation_end_flag = True
@@ -241,8 +239,6 @@ class Simulation(QThread):
         dead = []
         quarantined = []
 
-
-
         x = 0
         for stat in stats:
             days.append(stat[0])
@@ -254,7 +250,7 @@ class Simulation(QThread):
             x += 1
 
         fig = go.Figure(data=[
-            go.Bar(name='Sick', x=days, y=sick, marker={'color': 'blue'} ),
+            go.Bar(name='Sick', x=days, y=sick, marker={'color': 'blue'}),
             go.Bar(name='Recovered', x=days, y=immune, marker={'color': 'green'}),
             go.Bar(name='Dead', x=days, y=dead, marker={'color': 'red'}),
             go.Bar(name='Healthy', x=days, y=healthy, marker={'color': 'orange'})])
