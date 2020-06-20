@@ -84,7 +84,7 @@ class AppController:
                 application_path = Path(__file__).parent.parent.parent
 
             dir_path = str(application_path)
-            with open(dir_path + '\\ressources\\virus_lib.json') as json_file:
+            with open(dir_path + '/ressources/virus_lib.json') as json_file:
                 data = json.load(json_file)
                 for v in data['viruses']:
                     self._virus_list.append(TheVirus.Virus(v['name'],
@@ -95,7 +95,7 @@ class AppController:
             self._mainWindow.update_virus_comboBox(self._virus_list)
 
         except:
-            print('Something went wrong loading file from directory: ' + dir_path + '\\ressources\\virus_lib.json')
+            print('Something went wrong loading file from directory: ' + dir_path + '/ressources/virus_lib.json')
 
     def write_viurses_to_file(self, viurs_list):
         data = {}
@@ -115,7 +115,7 @@ class AppController:
             application_path = Path(__file__).parent.parent.parent
 
         dir_path = str(application_path)
-        with open(dir_path + '\\ressources\\virus_lib.json', 'w') as outfile:
+        with open(dir_path + '/ressources/virus_lib.json', 'w') as outfile:
             json.dump(data, outfile)
 
     def update_virus(self, var):
