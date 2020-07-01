@@ -1,4 +1,5 @@
 """MainGUI Class"""
+import os
 import sys
 from pathlib import Path
 
@@ -25,7 +26,7 @@ class MainWindow(QMainWindow):
         dir_path = str(application_path)
 
         # load ui objects from Qt Designer .ui file
-        self._rootWidget = uic.loadUi(dir_path + '/src/gui/SimulationMainWindow.ui', self)
+        self._rootWidget = uic.loadUi(os.path.join(dir_path, 'src', 'gui', 'SimulationMainWindow.ui'),self)
 
         self._rootWidget.pB_init_sim.clicked.connect(lambda: self.pB_init_sim_clicked())
 
