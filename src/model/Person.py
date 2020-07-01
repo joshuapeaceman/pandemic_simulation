@@ -14,6 +14,8 @@ class Person:
         self._infection_start_time = 0
 
     def update_position(self, moving_distance):
+        """Move the instance of a person as long as they are not hospitalized or dead."""
+
         if self._hospitalized != True:
             radians = math.radians(random.randrange(0, 360, 1))
             new_x_pos = self._position[0] + int(math.cos(radians) * moving_distance)
@@ -26,18 +28,21 @@ class Person:
                 self._position = (new_x_pos, new_y_pos)
 
     def send_to_hospital(self):
+        """Send a person to the hospital/quarantine area."""
         self._hospitalized = True
         new_x_pos = -100 + random.randrange(0, 200, 1)
         new_y_pos = 1200 + random.randrange(0, 200, 1)
         self._position = (new_x_pos, new_y_pos)
 
     def send_to_cemetery(self):
+        """Send a person the the dead person area."""
         self._hospitalized = False
         new_x_pos = 900 + random.randrange(0, 200, 1)
         new_y_pos = 1200 + random.randrange(0, 200, 1)
         self._position = (new_x_pos, new_y_pos)
 
     def send_to_afterparty(self):
+        """Send the person to the after party area. Only for recovered persons."""
         self._hospitalized = False
         new_x_pos = 400 + random.randrange(0, 200, 1)
         new_y_pos = 1200 + random.randrange(0, 200, 1)

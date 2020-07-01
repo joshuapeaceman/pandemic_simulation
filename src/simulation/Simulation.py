@@ -2,7 +2,6 @@ import math
 from copy import deepcopy
 
 import pandas
-from PyQt5.QtCore import QThread
 
 from src.model import Person
 import random
@@ -10,9 +9,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-class Simulation(QThread):
+class Simulation():
     def __init__(self):
-        QThread.__init__(self)
 
         self._person_dictionary = {}
         self._person_list = []
@@ -26,7 +24,7 @@ class Simulation(QThread):
         self._mobility_reduction_start_time = 1000
         self._send_to_hospital_day = 0
 
-        self.last_know_new_infection = 0
+        self.day_of_last_known_new_infection = 0
         self._hospital_capacity = 150
         self._hospital_beds_used_cnt = 0
         self._selected_virus = None
@@ -35,13 +33,9 @@ class Simulation(QThread):
         self.animation_df = []
         self._simulation_stats_per_day = []
 
-    def __del__(self):
-        self.wait()
+    def run_simulation(self):
+        """Creates the initial population set in the GUI. Initializes all simulation parameters."""
 
-    def run(self):
-        self.initiate_simulation()
-
-    def initiate_simulation(self):
         self._simulation_end_flag = False
         self.animation_df.clear()
 
@@ -67,27 +61,30 @@ class Simulation(QThread):
         self.run_simulation_loop()
 
     def run_simulation_loop(self):
-        """Main simulation loop method. This method generates the output for the plot. While the simulation_end_flag
-        is set to False the loop will continue incrementing by one for every day of the pandemic. Every day all
-        healthy and infected people move by the set distance in a random direction. (see Person.update_position()).
-        Then the health status is checked and some people are killed by the virus, while others are set to
-        'Recovered' if they survived for the set duration of the illness (see self.update_health_Status()). At last
-        all infected people check their surroundings for health people and infect them depending on the
-        contagiousness propability set by the user (see self.find_healthy_persons_inside_contagious_radius_and_infect())"""
+        """Main simulation loop method. This method generates the output for the plot and animation. While the
+        simulation_end_flag is set to False the loop will continue incrementing by one for every day of the pandemic.
+        Every day all healthy and infected people move by the set distance in a random direction.
+        (see Person.update_position()). Then the health status is checked and some people are killed by the virus,
+        while others are set to 'Recovered' if they survived for the set duration of the illness
+        (see self.update_health_Status()). At last all infected people check their surroundings for health people and
+        infect them depending on the contagiousness propability set by the user
+        (see self.find_healthy_persons_inside_contagious_radius_and_infect())"""
+
+
         self._simulation_end_flag = False
         self.stats.clear()
 
         day_counter = 0
-        self.last_know_new_infection = 0
+        self.day_of_last_known_new_infection = 0
         print('starting simulation run..')
 
         while not self._simulation_end_flag:
 
-            # all healthy people
+            # Update position for all healthy people.
             for idx, aPerson in enumerate(self._person_dictionary[0]):
                 aPerson.update_position(self._people_moving_distance_per_day)
 
-            # all infected people
+            # Update position for all infected people and infect new people. Also check health status changes.
             for idx, aPerson in enumerate(self._person_dictionary[1]):
 
                 aPerson.update_position(self._people_moving_distance_per_day)
@@ -101,9 +98,13 @@ class Simulation(QThread):
                                                                                              self._person_dictionary[
                                                                                                  0])
 
+                    """Set general simulation parameter "day_of_last_known_new_infection" to the current day if someone
+                    was infected that day."""
                     if infected == True:
-                        self.last_know_new_infection = day_counter
+                        self.day_of_last_known_new_infection = day_counter
 
+
+            """Append current day stats for bar chart"""
             self.stats.append((day_counter,
                                len(self._person_dictionary[0]),
                                len(self._person_dictionary[1]),
@@ -112,21 +113,30 @@ class Simulation(QThread):
                                len(self._person_dictionary[4]),
                                ))
 
+
+
             active_sick_people = len(self._person_dictionary[1])
             percentage = (active_sick_people / self._population_size) * 100
 
+
+            """Slow down movement of population if a specific set percentage of the population is infected. If the 
+            percentage drops back below the threshold set moving distance back to initial value."""
             if percentage >= (self._mobility_reduction_start_time / 10):
                 self._people_moving_distance_per_day = self._people_moving_distance_per_day_after_reduction
             else:
                 self._people_moving_distance_per_day = self._people_moving_distance_per_day_original
 
-            if day_counter >= 300 and day_counter > self.last_know_new_infection + self._selected_virus.get_recovery_time():
+
+            """Check to see if we can stop the simulation."""
+            if day_counter >= 300 and day_counter > self.day_of_last_known_new_infection + self._selected_virus.get_recovery_time():
                 self._simulation_end_flag = True
                 print('finished simulation run.. plotting stats... check your browser')
                 self.plot_simulation_stats(self.stats)
                 ('finished simulation run.. generating animation... check your browser')
                 self.generate_animation(self.animation_df)
 
+
+            """Generate the frames for the scatter plot animation."""
             self.generate_scatter_plot_animation_frames(day_counter, self._person_dictionary)
             day_counter += 1
 
@@ -164,7 +174,13 @@ class Simulation(QThread):
         return infected_flag
 
     def update_health_status(self, current_person, current_day, person_dictionary, current_index):
-        x = int(current_day - current_person.get_infection_start_time())
+        """This is where the magic happens. This method looks at an infected person, when they were infected and what
+        to do with them. We can send people to hospital/quarantine, let them recover or send them to die. Here we can
+        add any kind of health state change for an infected person. Feel free to add things..."""
+
+
+        """Send person to the hospital/quarantine area. They can not infect anyone new there. Also fill as 
+        hospital spot with an extra person. This will be undone once the person has recovered or died."""
         if int(current_day - current_person.get_infection_start_time()) == self._send_to_hospital_day:
             if self._hospital_beds_used_cnt < self._hospital_capacity:
                 if current_person.get_hospitalized_status() != True:
@@ -257,7 +273,7 @@ class Simulation(QThread):
         # Change the bar mode
         fig.update_layout(barmode='stack',
                           title=self._selected_virus.get_name() + ' raged for ' + str(
-                              self.last_know_new_infection + self._selected_virus.get_recovery_time()) + ' days, infected a total of ' + str(
+                              self.day_of_last_known_new_infection + self._selected_virus.get_recovery_time()) + ' days, infected a total of ' + str(
                               immune[-1] + dead[-1]) + ' and killed ' + str(dead[-1]) + ' people.',
                           xaxis_title="Days of pandemic",
                           yaxis_title="People Count")

@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 
@@ -73,7 +74,7 @@ class AppController:
         simulation.set_send_to_hospital_day(self._mainWindow.get_rootWidget().sP_send_to_hospital_day.value())
         simulation.set_hospital_capacity(self._mainWindow.get_rootWidget().sB_hospital_capacity.value())
 
-        simulation.start()
+        simulation.run_simulation()
 
     def load_virus_from_file(self):
         try:
@@ -84,7 +85,7 @@ class AppController:
                 application_path = Path(__file__).parent.parent.parent
 
             dir_path = str(application_path)
-            with open(dir_path + '\\ressources\\virus_lib.json') as json_file:
+            with open(os.path.join(dir_path, 'ressources', 'virus_lib.json')) as json_file:
                 data = json.load(json_file)
                 for v in data['viruses']:
                     self._virus_list.append(TheVirus.Virus(v['name'],
@@ -95,7 +96,7 @@ class AppController:
             self._mainWindow.update_virus_comboBox(self._virus_list)
 
         except:
-            print('Something went wrong loading file from directory: ' + dir_path + '\\ressources\\virus_lib.json')
+            print('Something went wrong loading file from directory: ' + os.path.join(dir_path, 'ressources', 'virus_lib.json'))
 
     def write_viurses_to_file(self, viurs_list):
         data = {}
@@ -115,7 +116,7 @@ class AppController:
             application_path = Path(__file__).parent.parent.parent
 
         dir_path = str(application_path)
-        with open(dir_path + '\\ressources\\virus_lib.json', 'w') as outfile:
+        with open(dir_path + '/ressources/virus_lib.json', 'w') as outfile:
             json.dump(data, outfile)
 
     def update_virus(self, var):

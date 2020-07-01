@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74c835ce-0106-4510-adef-41ce3237909f" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/ressources/example_pictures/GUI.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/example_pictures/GUI.PNG" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/Program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ApplicationController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ApplicationController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Person.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation/Simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Simulation.py" afterDir="false" />
+>>>>>>> develop
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -40,7 +51,28 @@
       <recent name="C:\Users\Joshua\PycharmProjects\infection_simulation" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Program (1)">
+    <configuration name="Program (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pandemic_simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Program.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Program" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pandemic_simulation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Program (1)" />
         <item itemvalue="Python.Program" />
       </list>
     </recent_temporary>
@@ -82,6 +115,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="991" y="376" key="#Program" timestamp="1592666526035">
+      <screen x="0" y="0" width="2560" height="1570" />
+    </state>
+    <state x="991" y="376" key="#Program/0.0.2560.1570@0.0.2560.1570" timestamp="1592666526035" />
     <state x="736" y="357" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585518406865">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -103,51 +140,108 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1061" y="456" width="438" height="483" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1585601351335" />
-    <state width="1870" height="448" key="GridCell.Tab.0.bottom" timestamp="1589913912391">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.0.bottom" timestamp="1592666976063">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.0.bottom" timestamp="1593634574356">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.0.bottom/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912391" />
     <state width="1259" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585846138493" />
-    <state width="1870" height="448" key="GridCell.Tab.0.center" timestamp="1589913912391">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.0.bottom/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976063" />
+    <state width="2537" height="482" key="GridCell.Tab.0.center" timestamp="1592666976063">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.0.bottom/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574356" />
+    <state width="2530" height="227" key="GridCell.Tab.0.center" timestamp="1593634574356">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.0.center/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912391" />
     <state width="1259" height="276" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585846138493" />
-    <state width="1870" height="448" key="GridCell.Tab.0.left" timestamp="1589913912391">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.0.center/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976063" />
+    <state width="2537" height="482" key="GridCell.Tab.0.left" timestamp="1592666976062">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.0.center/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574356" />
+    <state width="2530" height="227" key="GridCell.Tab.0.left" timestamp="1593634574354">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.0.left/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912391" />
     <state width="1259" height="276" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585846138493" />
-    <state width="1870" height="448" key="GridCell.Tab.0.right" timestamp="1589913912391">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.0.left/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976062" />
+    <state width="2537" height="482" key="GridCell.Tab.0.right" timestamp="1592666976063">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.0.left/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574354" />
+    <state width="2530" height="227" key="GridCell.Tab.0.right" timestamp="1593634574356">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.0.right/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912391" />
     <state width="1259" height="276" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585846138493" />
-    <state width="1870" height="448" key="GridCell.Tab.1.bottom" timestamp="1589913912327">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.0.right/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976063" />
+    <state width="2537" height="482" key="GridCell.Tab.1.bottom" timestamp="1592666976064">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.0.right/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574356" />
+    <state width="2530" height="227" key="GridCell.Tab.1.bottom" timestamp="1593634574193">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.1.bottom/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912327" />
     <state width="2539" height="275" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585602803997" />
-    <state width="1870" height="448" key="GridCell.Tab.1.center" timestamp="1589913912327">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.1.bottom/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976064" />
+    <state width="2537" height="482" key="GridCell.Tab.1.center" timestamp="1592666976063">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.1.bottom/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574193" />
+    <state width="2530" height="227" key="GridCell.Tab.1.center" timestamp="1593634574192">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.1.center/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912327" />
     <state width="2539" height="275" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585602803997" />
-    <state width="1870" height="448" key="GridCell.Tab.1.left" timestamp="1589913912327">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.1.center/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976063" />
+    <state width="2537" height="482" key="GridCell.Tab.1.left" timestamp="1592666976063">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.1.center/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574192" />
+    <state width="2530" height="227" key="GridCell.Tab.1.left" timestamp="1593634574192">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.1.left/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912327" />
     <state width="2539" height="275" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585602803997" />
-    <state width="1870" height="448" key="GridCell.Tab.1.right" timestamp="1589913912327">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.1.left/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976063" />
+    <state width="2537" height="482" key="GridCell.Tab.1.right" timestamp="1592666976063">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.1.left/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574192" />
+    <state width="2530" height="227" key="GridCell.Tab.1.right" timestamp="1593634574192">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state width="1870" height="448" key="GridCell.Tab.1.right/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589913912327" />
     <state width="2539" height="275" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585602803997" />
-    <state x="837" y="145" key="SettingsEditor" timestamp="1589106216578">
-      <screen x="0" y="0" width="2560" height="1400" />
+<<<<<<< Updated upstream
+    <state width="2537" height="482" key="GridCell.Tab.1.right/0.0.2560.1570@0.0.2560.1570" timestamp="1592666976063" />
+    <state x="837" y="163" key="SettingsEditor" timestamp="1592666729159">
+=======
+    <state width="2530" height="227" key="GridCell.Tab.1.right/0.0.2560.1570@0.0.2560.1570" timestamp="1593634574192" />
+    <state x="744" y="411" key="SettingsEditor" timestamp="1593632363878">
+>>>>>>> Stashed changes
+      <screen x="0" y="0" width="2560" height="1570" />
     </state>
     <state x="837" y="145" key="SettingsEditor/0.0.2560.1400/3840.960.1920.1040@0.0.2560.1400" timestamp="1589106216578" />
     <state x="242" y="75" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585601597339" />
+<<<<<<< Updated upstream
+    <state x="837" y="163" key="SettingsEditor/0.0.2560.1570@0.0.2560.1570" timestamp="1592666729159" />
+=======
+    <state x="744" y="411" key="SettingsEditor/0.0.2560.1570@0.0.2560.1570" timestamp="1593632363878" />
+>>>>>>> Stashed changes
     <state x="976" y="526" key="com.intellij.ide.util.TipDialog" timestamp="1585346867096">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

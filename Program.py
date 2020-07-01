@@ -10,6 +10,7 @@ pandemic.
 
 This will NOT predict how the COVID-19 or any pandemic will play out in the real world! There are way too many
 variables in the real world that I can't include in the simulation. Have fun with the simulation and stay safe!"""
+import traceback
 
 from PyQt5 import QtWidgets
 import sys
@@ -17,7 +18,10 @@ import sys
 from src.controller import ApplicationController
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    appCtrl = ApplicationController.AppController()
+    try:
+        app = QtWidgets.QApplication(sys.argv)
+        appCtrl = ApplicationController.AppController()
 
-    sys.exit(app.exec_())
+        sys.exit(app.exec_())
+    except:
+        traceback.print_exc()
