@@ -4,7 +4,7 @@ setup(
     name='pandemic_simulation',
     version='0.0.1',
     packages=['pandemic_simulation'],
-    install_requires=['pathlib', 'json', 'random', 'math', 'plotly', 'PyQt5'],
+    install_requires=['pathlib', 'plotly', 'PyQt5', 'pandas'],
     url='https://github.com/joshuapeaceman/pandemic_simulation',
     license='',
     author='Joshua',
