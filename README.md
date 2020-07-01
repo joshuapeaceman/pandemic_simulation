@@ -13,7 +13,7 @@ The included virus characteristics are completly made up.
 If you notice any errors, feel free to contact me or comment on this project.
 
 ## Version
-version 1.1
+version 1.2
 This is work in progress. Feel free to make feature requests.
 
 ## General info
@@ -28,6 +28,7 @@ Features:
 *Simple GUI
 *Plot pandemic curves using Plotly
 *Animate the spread of the pandemic inside the population
+*Runs on Windows and Linux based OS
 
 ## Example Pictures
 
