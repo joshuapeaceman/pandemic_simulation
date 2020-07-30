@@ -6,7 +6,7 @@ from src.gui import MainWindow
 from src.simulation import Simulation
 from src.model import TheVirus
 import json
-from multiprocessing import Process
+
 
 
 class AppController:
