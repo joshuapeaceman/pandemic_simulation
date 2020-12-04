@@ -36,9 +36,9 @@ class MainWindow(QMainWindow):
 
         self._rootWidget.tE_virus_name.textChanged.connect(lambda: self.tE_virus_name_valueChanged())
 
+        self._rootWidget.sB_virus_recovery_time.valueChanged.connect(lambda: self.sB_virus_recovery_time_valueChanged())
         self._rootWidget.sB_virus_death_rate.valueChanged.connect(lambda: self.sB_virus_death_rate_valueChanged())
 
-        self._rootWidget.sB_virus_recovery_time.valueChanged.connect(lambda: self.sB_virus_recovery_time_valueChanged())
 
         self._rootWidget.sB_virus_contagiousness.valueChanged.connect(
             lambda: self.sB_virus_contagiousness_valueChanged())
