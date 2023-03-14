@@ -46,7 +46,9 @@ Project is created with:
 * Plotly
 
 ## Known Issues
-*Very long calculation time running on large populations (pop > 3000). I guess its a Python problem
+*Very long calculation time running on large populations (pop > 3000). I guess its a Python problem amd no optimization. 
+
+--> Quadtrees could help
 
 ## Future Features
 
